@@ -1,0 +1,8 @@
+<nav class="menu-lateral">
+    @for (colab of lista(); track colab.id) {
+    <button class="tarjeta-colaborador" [class.activo]="activo()?.id === colab.id" (click)="onSelectUser(colab)">
+        <img [src]="colab.avatar" [alt]="colab.nombre" class="foto" />
+        <span>{{ colab.nombre }}</span>
+    </button>
+    }
+</nav>

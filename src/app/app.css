@@ -1,1 +1,26 @@
-/* Estilos globales */
+.contenedor-app {
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #120a1f; 
+}
+
+.area-contenido {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    gap: 60px;
+    padding: 40px 60px;
+    align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+    .area-contenido {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px;
+    }
+}

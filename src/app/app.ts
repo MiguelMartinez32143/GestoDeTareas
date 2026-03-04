@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { EncabezadoComponent } from './componentes/encabezado/encabezado';
+import { UsuarioComponent } from './componentes/usuario/usuario';
+import { TareasComponent } from './componentes/tareas/tareas';
+import { Colaborador, LISTA_COLABORADORES } from './usuarios-falsos';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [EncabezadoComponent, UsuarioComponent, TareasComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('ejemplo');
+  colaboradores: Colaborador[] = LISTA_COLABORADORES;
+  colaboradorActual: Colaborador | null = this.colaboradores[0];
+
+  asignarColaborador(colaborador: Colaborador): void {
+    this.colaboradorActual = colaborador;
+  }
 }
