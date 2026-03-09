@@ -16,7 +16,7 @@ export interface Usuario {
 export const USUARIOS: Usuario[] = [
   {
     id: 'u1',
-    nombre: 'Antonia Céspedes',
+    nombre: 'Antonio Céspedes',
     avatar: 'img/1.jpg',
     tareas: [
       {
@@ -37,7 +37,7 @@ export const USUARIOS: Usuario[] = [
   },
   {
     id: 'u2',
-    nombre: 'Emilia Torres',
+    nombre: 'Andres Torres',
     avatar: 'img/2.jpg',
     tareas: [
       {
@@ -79,7 +79,7 @@ export const USUARIOS: Usuario[] = [
   },
   {
     id: 'u4',
-    nombre: 'David Mercado',
+    nombre: 'Daniela Mercado',
     avatar: 'img/4.jpg',
     tareas: [
       {
@@ -100,7 +100,7 @@ export const USUARIOS: Usuario[] = [
   },
   {
     id: 'u5',
-    nombre: 'Pamela Chan',
+    nombre: 'Jhonatan Martinez',
     avatar: 'img/5.jpg',
     tareas: [
       {
