@@ -1,0 +1,12 @@
+<div class="tarjeta-tarea" [class.completada]="tarea().terminada">
+    <div class="tarea-contenido">
+        <h3 class="tarea-titulo">{{ tarea().titulo }}</h3>
+        <p class="tarea-tiempo">{{ tarea().tiempo }}</p>
+        <p class="tarea-resumen">{{ tarea().resumen }}</p>
+    </div>
+    <div class="tarea-acciones">
+        <button class="btn-terminada" [class.done]="tarea().terminada" (click)="marcarTerminada()">
+            {{ tarea().terminada ? 'Terminada' : 'Terminada' }}
+        </button>
+    </div>
+</div>

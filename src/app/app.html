@@ -1,14 +1,13 @@
 <main class="contenedor-app">
-    <!-- ENCABEZADO -->
-    <app-encabezado></app-encabezado>
+  <!-- ENCABEZADO -->
+  <app-encabezado></app-encabezado>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <section class="area-contenido">
-        <!-- LADO IZQUIERDO: USUARIOS -->
-        <app-usuario [lista]="colaboradores" [activo]="colaboradorActual"
-            (seleccion)="asignarColaborador($event)"></app-usuario>
+  <!-- CONTENIDO PRINCIPAL -->
+  <section class="area-contenido">
+    <!-- LADO IZQUIERDO: USUARIOS -->
+    <app-usuario [lista]="usuarios" [activo]="usuarioActual" (seleccion)="seleccionarUsuario($event)"></app-usuario>
 
-        <!-- LADO DERECHO: TAREAS -->
-        <app-tareas [colaborador]="colaboradorActual"></app-tareas>
-    </section>
+    <!-- LADO DERECHO: TAREAS -->
+    <app-tareas [usuario]="usuarioActual"></app-tareas>
+  </section>
 </main>

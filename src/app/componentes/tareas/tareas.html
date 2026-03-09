@@ -1,5 +1,14 @@
-<article class="panel-info">
-    @if (colaborador()) {
-    <h2>{{ colaborador()!.nombre }}</h2>
+<article class="panel-tareas">
+    @if (usuario()) {
+    <div class="panel-header">
+        <h2>Tareas de {{ usuario()!.nombre }}</h2>
+        <button class="btn-agregar">Agregar Tarea Nueva</button>
+    </div>
+
+    <div class="lista-tareas">
+        @for (tarea of usuario()!.tareas; track tarea.id) {
+        <app-tarea [tarea]="tarea"></app-tarea>
+        }
+    </div>
     }
 </article>

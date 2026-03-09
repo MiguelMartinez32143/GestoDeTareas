@@ -1,14 +1,13 @@
 import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Colaborador } from '../../usuarios-falsos';
+import { TareaComponent } from '../tarea/tarea';
+import { Usuario } from '../../usuarios-falsos';
 
 @Component({
     selector: 'app-tareas',
-    standalone: true,
-    imports: [CommonModule],
+    imports: [TareaComponent],
     templateUrl: './tareas.html',
     styleUrl: './tareas.css',
 })
 export class TareasComponent {
-    colaborador = input<Colaborador | null>(null);
+    usuario = input<Usuario | null>(null);
 }

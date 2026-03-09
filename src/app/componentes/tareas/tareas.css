@@ -3,24 +3,52 @@
     flex: 1;
 }
 
-.panel-info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
+.panel-tareas {
     min-height: 300px;
-    padding: 20px;
 }
 
-.panel-info h2 {
-    font-size: 2.8rem;
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.panel-header h2 {
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
+    color: #ffffff;
+}
+
+.btn-agregar {
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: 2px solid #9b59b6;
+    background: transparent;
     color: #d4a5ff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.btn-agregar:hover {
+    background: rgba(155, 89, 182, 0.25);
+    transform: translateY(-2px);
+}
+
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 @media (max-width: 900px) {
-    .panel-info h2 {
-        font-size: 2.2rem;
+    .panel-header h2 {
+        font-size: 1.3rem;
     }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado';
 import { UsuarioComponent } from './componentes/usuario/usuario';
 import { TareasComponent } from './componentes/tareas/tareas';
-import { Colaborador, LISTA_COLABORADORES } from './usuarios-falsos';
+import { Usuario, USUARIOS } from './usuarios-falsos';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,10 @@ import { Colaborador, LISTA_COLABORADORES } from './usuarios-falsos';
   styleUrl: './app.css',
 })
 export class App {
-  colaboradores: Colaborador[] = LISTA_COLABORADORES;
-  colaboradorActual: Colaborador | null = this.colaboradores[0];
+  usuarios: Usuario[] = USUARIOS;
+  usuarioActual: Usuario | null = this.usuarios[0];
 
-  asignarColaborador(colaborador: Colaborador): void {
-    this.colaboradorActual = colaborador;
+  seleccionarUsuario(usuario: Usuario): void {
+    this.usuarioActual = usuario;
   }
 }
