@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ejemplo": "node dist/ejemplo/server/server.mjs",
-    "build:prod": "ng build --configuration production --base-href=/ejemplo/ --deploy-url=/ejemplo/",
+    "build:prod": "ng build --configuration production --base-href=/GestoDeTareas/ --deploy-url=/GestoDeTareas/",
     "deploy": "npm run build:prod && npx angular-cli-ghpages --dir=dist/ejemplo/browser"
   },
   "private": true,
