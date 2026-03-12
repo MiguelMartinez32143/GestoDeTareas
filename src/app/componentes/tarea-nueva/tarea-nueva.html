@@ -1,0 +1,25 @@
+<div class="modal-backdrop" (click)="cerrarModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <h3>Agregar Nueva Tarea</h3>
+        
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" [(ngModel)]="nuevaTarea.titulo" placeholder="Ej: Diseñar interfaz">
+        </div>
+
+        <div class="form-group">
+            <label for="tiempo">Tiempo</label>
+            <input type="text" id="tiempo" [(ngModel)]="nuevaTarea.tiempo" placeholder="Ej: 2 horas">
+        </div>
+
+        <div class="form-group">
+            <label for="resumen">Descripción</label>
+            <textarea id="resumen" [(ngModel)]="nuevaTarea.resumen" placeholder="Detalles de la tarea..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-cancelar" (click)="cerrarModal()">Cancelar</button>
+            <button class="btn-guardar" [disabled]="!nuevaTarea.titulo || !nuevaTarea.tiempo || !nuevaTarea.resumen">Agregar Tarea</button>
+        </div>
+    </div>
+</div>

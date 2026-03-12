@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Tarea } from '../../usuarios-falsos';
 
 @Component({
@@ -8,9 +8,9 @@ import { Tarea } from '../../usuarios-falsos';
 })
 export class TareaComponent {
     tarea = input.required<Tarea>();
+    terminada = output<string>();
 
     marcarTerminada(): void {
-        const t = this.tarea();
-        (t as Tarea).terminada = !t.terminada;
+        this.terminada.emit(this.tarea().id);
     }
 }
