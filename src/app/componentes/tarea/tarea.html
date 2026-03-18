@@ -1,4 +1,4 @@
-<div class="tarjeta-tarea" [class.completada]="tarea().terminada">
+<app-tarjeta [completada]="tarea().terminada">
     <div class="tarea-contenido">
         <h3 class="tarea-titulo">{{ tarea().titulo }}</h3>
         <p class="tarea-tiempo">{{ tarea().tiempo }}</p>
@@ -9,4 +9,4 @@
             {{ tarea().terminada ? 'Terminada' : 'Terminada' }}
         </button>
     </div>
-</div>
+</app-tarjeta>

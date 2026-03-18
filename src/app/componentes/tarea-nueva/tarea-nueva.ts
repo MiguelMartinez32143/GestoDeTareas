@@ -21,4 +21,13 @@ export class TareaNuevaComponent {
     cerrarModal() {
         this.cerrar.emit();
     }
+
+    guardarTarea() {
+        const tareaAEnviar = {
+            titulo: this.nuevaTarea.titulo,
+            tiempo: `${this.nuevaTarea.tiempo} horas`,
+            resumen: this.nuevaTarea.resumen
+        };
+        this.agregar.emit(tareaAEnviar);
+    }
 }

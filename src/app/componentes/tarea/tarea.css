@@ -2,51 +2,30 @@
     display: block;
 }
 
-.tarjeta-tarea {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 22px 26px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-    transition: all 0.25s ease;
-}
 
-.tarjeta-tarea:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: rgba(200, 100, 255, 0.25);
-}
-
-.tarjeta-tarea.completada {
-    opacity: 0.6;
-}
 
 .tarea-contenido {
     flex: 1;
 }
 
 .tarea-titulo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0 0 6px 0;
-    color: #ffffff;
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #2d1b4e;
 }
 
 .tarea-tiempo {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
+    color: #6a4f91;
+    margin: 0 0 12px 0;
     letter-spacing: 0.5px;
 }
 
 .tarea-resumen {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.05rem;
+    color: #2d1b4e;
     margin: 0;
     line-height: 1.5;
 }
@@ -59,13 +38,13 @@
 }
 
 .btn-terminada {
-    padding: 8px 20px;
-    border-radius: 20px;
+    padding: 10px 24px;
+    border-radius: 6px;
     border: none;
-    background: #9b59b6;
+    background: #2b114d;
     color: white;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.25s ease;
     font-family: inherit;
@@ -73,19 +52,17 @@
 }
 
 .btn-terminada:hover {
-    background: #8e44ad;
+    background: #1c0a34;
     transform: scale(1.05);
 }
 
 .btn-terminada.done {
-    background: rgba(155, 89, 182, 0.3);
-    color: #d4a5ff;
+    background: rgba(43, 17, 77, 0.5);
+    color: #e0d0f5;
 }
 
 @media (max-width: 600px) {
-    .tarjeta-tarea {
-        flex-direction: column;
-    }
+
 
     .tarea-acciones {
         align-self: flex-end;

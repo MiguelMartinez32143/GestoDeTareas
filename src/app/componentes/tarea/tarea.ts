@@ -1,8 +1,10 @@
 import { Component, input, output } from '@angular/core';
 import { Tarea } from '../../usuarios-falsos';
+import { TarjetaComponent } from '../tarjeta/tarjeta';
 
 @Component({
     selector: 'app-tarea',
+    imports: [TarjetaComponent],
     templateUrl: './tarea.html',
     styleUrl: './tarea.css',
 })

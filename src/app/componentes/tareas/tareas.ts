@@ -9,7 +9,7 @@ import { Usuario, Tarea } from '../../usuarios-falsos';
     imports: [CommonModule, TareaComponent, TareaNuevaComponent],
     templateUrl: './tareas.html',
     styleUrl: './tareas.css',
-})  
+})
 export class TareasComponent {
     usuario = input<Usuario | null>(null);
 
@@ -34,7 +34,7 @@ export class TareasComponent {
         const user = this.usuario();
         if (user) {
             const nueva: Tarea = {
-                id: 't' + new Date().getTime(),
+                id: 't' + new Date(),
                 titulo: nuevaData.titulo,
                 tiempo: nuevaData.tiempo,
                 resumen: nuevaData.resumen,
