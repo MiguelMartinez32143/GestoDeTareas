@@ -35,9 +35,9 @@ export const USUARIOS: Usuario[] = [
     tareas: [
       {
         id: 't3',
-        titulo: 'Crear componente de tareas',
+        titulo: 'Crear componentes',
         tiempo: '3 horas',
-        resumen: 'Desarrollar el componente que lista y gestiona las tareas asignadas.',
+        resumen: 'Desarrollar los componentes de la aplicacion',
         terminada: false,
       },
     ],
