@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Usuario } from '../../usuarios-falsos';
 
 @Component({
@@ -7,11 +7,11 @@ import { Usuario } from '../../usuarios-falsos';
     styleUrl: './usuario.css',
 })
 export class UsuarioComponent {
-    lista = input.required<Usuario[]>();
-    activo = input<Usuario | null>(null);
-    seleccion = output<Usuario>();
+    @Input({ required: true }) lista!: Usuario[];
+    @Input() activo: Usuario | null = null;
+    @Output() seleccion = new EventEmitter<Usuario>();
 
-    onSelectUser(usuario: Usuario): void {
+    alSeleccionarUsuario(usuario: Usuario): void {
         this.seleccion.emit(usuario);
     }
 }

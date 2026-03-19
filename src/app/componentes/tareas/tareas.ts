@@ -1,8 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TareaComponent } from '../tarea/tarea';
 import { TareaNuevaComponent } from '../tarea-nueva/tarea-nueva';
-import { Usuario, Tarea } from '../../usuarios-falsos';
+import { Usuario } from '../../usuarios-falsos';
+import { Tarea, NuevaTareaInfo } from '../tarea/tarea.model';
+import { TareaService } from '../../tarea.service';
 
 @Component({
     selector: 'app-tareas',
@@ -11,37 +13,29 @@ import { Usuario, Tarea } from '../../usuarios-falsos';
     styleUrl: './tareas.css',
 })
 export class TareasComponent {
-    usuario = input<Usuario | null>(null);
+    @Input({ required: true }) usuario!: Usuario;
+    @Input({ required: true }) userId!: string;
+    formularioVisible = false;
 
-    mostrarModal = false;
+    // Inyección de dependencias por Constructor
+    constructor(private tareaService: TareaService) {}
 
-    eliminarTarea(id: string) {
-        const user = this.usuario();
-        if (user) {
-            user.tareas = user.tareas.filter((t) => t.id !== id);
-        }
+    // Tareas filtradas del servicio central
+    get tareas() {
+        return this.tareaService.obtenerPorUsuario(this.userId);
     }
 
-    abrirModal() {
-        this.mostrarModal = true;
+
+    cerrarFormulario() {
+        this.formularioVisible = false;
     }
 
-    cancelarTarea() {
-        this.mostrarModal = false;
+    eliminar(id: string) {
+        this.tareaService.eliminar(id);
     }
 
-    agregarTarea(nuevaData: { titulo: string; tiempo: string; resumen: string }) {
-        const user = this.usuario();
-        if (user) {
-            const nueva: Tarea = {
-                id: 't' + new Date(),
-                titulo: nuevaData.titulo,
-                tiempo: nuevaData.tiempo,
-                resumen: nuevaData.resumen,
-                terminada: false
-            };
-            user.tareas.push(nueva);
-            this.cancelarTarea();
-        }
+    guardarTarea(datos: NuevaTareaInfo) {
+        this.tareaService.agregar(this.userId, datos);
+        this.cerrarFormulario();
     }
 }

@@ -1,13 +1,22 @@
 <main class="contenedor-app">
-  <!-- ENCABEZADO -->
+  
   <app-encabezado></app-encabezado>
 
-  <!-- CONTENIDO PRINCIPAL -->
+  
   <section class="area-contenido">
-    <!-- LADO IZQUIERDO: USUARIOS -->
-    <app-usuario [lista]="usuarios" [activo]="usuarioActual" (seleccion)="seleccionarUsuario($event)"></app-usuario>
+    
+    <app-usuario 
+    [lista]="usuarios" 
+    [activo]="usuarioActual" 
+    (seleccion)="seleccionarUsuario($event)"><!--De Hijo a Padre -->
+    </app-usuario>
 
-    <!-- LADO DERECHO: TAREAS -->
-    <app-tareas [usuario]="usuarioActual"></app-tareas>
+    
+    @if (usuarioActual) {
+      <app-tareas 
+      [usuario]="usuarioActual"
+      [userId]="usuarioActual.id"><!--De Padre a Hijo -->
+      </app-tareas>
+    }
   </section>
 </main>

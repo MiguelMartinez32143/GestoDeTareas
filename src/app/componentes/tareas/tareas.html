@@ -1,20 +1,20 @@
 <article class="panel-tareas">
-    @if (usuario()) {
+    @if (usuario) {
     <div class="panel-header">
-        <h2>Tareas de {{ usuario()!.nombre }}</h2>
-        <button class="btn-agregar" (click)="abrirModal()">Agregar Tarea Nueva</button>
+        <h2>Tareas de {{ usuario }}</h2>
+        <button class="btn-agregar" (click)="formularioVisible = true">Agregar Tarea Nueva</button>
     </div>
 
     <div class="lista-tareas">
-        @for (tarea of usuario()!.tareas; track tarea.id) {
-        <app-tarea [tarea]="tarea" (terminada)="eliminarTarea($event)"></app-tarea>
+        @for (tarea of tareas; track tarea.id) {
+        <app-tarea [tarea]="tarea"></app-tarea>
         }
     </div>
 
-    @if (mostrarModal) {
+    @if (formularioVisible) {
     <app-tarea-nueva 
-        (cerrar)="cancelarTarea()" 
-        (agregar)="agregarTarea($event)">
+        (cancelar)="cerrarFormulario()" 
+        (agregar)="guardarTarea($event)">
     </app-tarea-nueva>
     }
     }

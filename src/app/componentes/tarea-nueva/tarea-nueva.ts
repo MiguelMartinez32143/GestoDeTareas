@@ -1,6 +1,7 @@
-import { Component, output } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Tarea, NuevaTareaInfo } from '../tarea/tarea.model';
 
 @Component({
     selector: 'app-tarea-nueva',
@@ -9,25 +10,25 @@ import { FormsModule } from '@angular/forms';
     styleUrl: './tarea-nueva.css',
 })
 export class TareaNuevaComponent {
-    cerrar = output<void>();
-    agregar = output<{ titulo: string, tiempo: string, resumen: string }>();
+    @Output() cancelar = new EventEmitter<void>();
+    @Output() agregar = new EventEmitter<NuevaTareaInfo>();
 
-    nuevaTarea = {
+    formulario = {
         titulo: '',
-        tiempo: '',
+        tiempo: new Date(),
         resumen: ''
     };
 
-    cerrarModal() {
-        this.cerrar.emit();
+    alCancelar() {
+        this.cancelar.emit();
     }
 
-    guardarTarea() {
-        const tareaAEnviar = {
-            titulo: this.nuevaTarea.titulo,
-            tiempo: `${this.nuevaTarea.tiempo} horas`,
-            resumen: this.nuevaTarea.resumen
+    alAgregar() {
+        const datos: NuevaTareaInfo = {
+            titulo: this.formulario.titulo,
+            tiempo: this.formulario.tiempo,
+            resumen: this.formulario.resumen
         };
-        this.agregar.emit(tareaAEnviar);
+        this.agregar.emit(datos);
     }
 }
